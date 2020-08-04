@@ -15,8 +15,10 @@ import entities.UsedProduct;
 public class Program {
 
 	public static void main(String[] args) throws ParseException {
-		Scanner sc = new Scanner(System.in);
+
 		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+
 		
 		List<Product> list = new ArrayList<>();
 		
@@ -30,8 +32,8 @@ public class Program {
 			System.out.print("Common, used or imported (c/u/i)?" );
 			char origem = sc.next().charAt(0);
 			System.out.println("Name: ");
-			String name = sc.nextLine();
 			sc.nextLine();
+			String name = sc.nextLine();
 			System.out.print("Price: ");
 			double price = sc.nextDouble();
 			
@@ -50,6 +52,9 @@ public class Program {
 		
 		System.out.println();
 		System.out.println("PRICE TAGS:");
+		for (Product prod : list) {
+			System.out.println(prod.priceTag());
+		}
 		
 		sc.close();
 	}
